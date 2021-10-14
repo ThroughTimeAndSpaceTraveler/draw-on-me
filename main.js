@@ -4,11 +4,11 @@ const ctx = canvas.getContext('2d');    // canvas works on context, all drawings
 canvas.width = window.innerWidth; // scale the width and height
 canvas.height = window.innerHeight;  // to be fullscreen
 
-ctx.strokeStyle = '#BADA55'; // default pencil color
+ctx.strokeStyle = '#000'; // default pencil color
 
 ctx.lineJoin = 'round'; // makes the tip of the pencil round
 ctx.lineCap = 'round';  // 
-ctx.lineWidth = 100  // obvious
+ctx.lineWidth = 10  // obvious
 
 let isDrawing = false;  // indicate if user is drawing or not
 
