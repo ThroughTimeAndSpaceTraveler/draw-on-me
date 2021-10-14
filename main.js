@@ -2,9 +2,9 @@ const canvas = document.querySelector('#draw');
 const ctx = canvas.getContext('2d');    // canvas works on context, all drawings will be happening here, context can be 2d or 3d
 
 canvas.width = window.innerWidth; // scale the width and height
-canvas.height = widow.innerHeight;  // to be fullscreen
+canvas.height = window.innerHeight;  // to be fullscreen
 
-ctx.strokeStyle = '#000'; // default pencil color
+ctx.strokeStyle = '#BADA55'; // default pencil color
 
 ctx.lineJoin = 'round'; // makes the tip of the pencil round
 ctx.lineCap = 'round';  // 
@@ -26,12 +26,19 @@ function draw(e) {
 
     ctx.stroke();   // if mouse up, stops drawing
 
-    [lastX, lastY] = [e.offsetX, e.offsetY];    // change default starting position to be our mouse current position
+    lastX = e.offsetX;  // change default starting position to be our mouse current position
+    lastY = e.offsetY;
+
+    // [lastX, lastY] = [e.offsetX, e.offsetY]; // does not work, do not use
 };
 
 canvas.addEventListener('mousedown', (e) => {
     isDrawing = true    // checks if mouse down
-    [lastX, lastY] = [e.offsetX, e.offsetY] // update mouse position before drawing, to set the start
+
+    lastX = e.offsetX;  // update mouse position before drawing, to set the start
+    lastY = e.offsetY;
+
+    // [lastX, lastY] = [e.offsetX, e.offsetY] // does not work, do not use
 });
 canvas.addEventListener('mousemove', draw);  // watches for all mouse movements over canvas
 canvas.addEventListener('mouseup', () => isDrawing = false);    // checks if mouse up
