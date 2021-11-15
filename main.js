@@ -44,3 +44,8 @@ canvas.addEventListener('mousemove', draw);  // watches for all mouse movements 
 canvas.addEventListener('mouseup', () => isDrawing = false);    // checks if mouse up
 canvas.addEventListener('mouseout', () => isDrawing = false);   // checks if mouse out of the widow
 
+
+
+
+
+
